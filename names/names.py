@@ -19,7 +19,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 #     if name_1 in names_2:
 #         duplicates.append(name_1)
 
-# default way took 10.374504089355469 seconds to execute
+# default way took 10.374504089355469 seconds to execute because it has a quadradic runtime
 # for name_1 in names_1:
 #     for name_2 in names_2:
 #         if name_1 == name_2:
@@ -30,7 +30,8 @@ duplicates = []  # Return the list of duplicates in this data structure
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
 
-# BST method did it in 0.12504005432128906 seconds!
+# BST method did it in 0.12504005432128906 seconds because it has an n log n runtime!
+
 root = BSTNode(names_1[0]) # make first name on list the root of the tree
 
 for name_1 in names_1[1:]:
@@ -38,7 +39,7 @@ for name_1 in names_1[1:]:
 for name_2 in names_2:
     if root.contains(name_2):
         duplicates.append(name_2)
-    
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
